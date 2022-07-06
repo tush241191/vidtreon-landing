@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { ReactNode } from 'react';
-import styles from './PrimaryLayout.module.css';
 
 export interface IPrimaryLayout {
   children?: ReactNode;
@@ -12,7 +11,11 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children }) => {
       <Head>
         <title>Primary Layout Example</title>
       </Head>
-      <main className={styles.main}>{children}</main>
+      <main>
+        <div className='relative bg-gray-50 min-h-screen overflow-hidden'>
+          <div className='relative pt-6 pb-16 sm:pb-24'>{children}</div>
+        </div>
+      </main>
     </>
   );
 };
