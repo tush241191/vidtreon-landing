@@ -1,8 +1,6 @@
-export interface IHeader {
-  sampleTextProp?: string;
-}
+export interface IHeader {}
 
-const Header: React.FC<IHeader> = ({ sampleTextProp }) => {
+const Header: React.FC<IHeader> = () => {
   return (
     <div>
       <div className='max-w-7xl mx-auto px-4 sm:px-6'>

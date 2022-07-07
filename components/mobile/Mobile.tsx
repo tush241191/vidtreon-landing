@@ -4,11 +4,9 @@ import LoginCard from '../cards/login/LoginCard';
 import PremiumFeed from '../cards/premium/PremiumFeed';
 import CreatorProfile from '../profile/creator/CreatorProfile';
 
-export interface IMobile {
-  sampleTextProp?: string;
-}
+export interface IMobile {}
 
-const Mobile: React.FC<IMobile> = ({ sampleTextProp }) => {
+const Mobile: React.FC<IMobile> = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [isLoginModal, setIsLoginModal] = useState(false);
 

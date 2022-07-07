@@ -1,10 +1,9 @@
 export interface IPremiumFeed {
-  label?: string;
   onClickSubscribe: () => void;
 }
 
 const PremiumFeed: React.FC<IPremiumFeed> = (props: IPremiumFeed) => {
-  const { label, onClickSubscribe, ...rest } = props;
+  const { onClickSubscribe } = props;
   return (
     <div className='relative p-2 border-t-4 border-gray-200'>
       <div className='px-8 absolute inset-x-0 bottom-0 h-full bg-black/90'>

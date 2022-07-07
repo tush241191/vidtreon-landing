@@ -1,10 +1,9 @@
 export interface ICreatorProfile {
-  label?: string;
   onClickSubscribe: () => void;
 }
 
 const CreatorProfile: React.FC<ICreatorProfile> = (props: ICreatorProfile) => {
-  const { label, onClickSubscribe, ...rest } = props;
+  const { onClickSubscribe } = props;
 
   return (
     <div className="rounded-t-3xl space-y-4 bg-cover bg-center bg-no-repeat bg-[url('/car-1.jpeg')]">

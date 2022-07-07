@@ -1,8 +1,6 @@
 import { IFeedCard } from './FeedCard';
 
-const base: IFeedCard = {
-  sampleTextProp: 'Hello world!',
-};
+const base: IFeedCard = {};
 
 export const mockFeedCardProps = {
   base,

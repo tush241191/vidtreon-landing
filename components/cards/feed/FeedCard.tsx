@@ -1,8 +1,6 @@
-export interface IFeedCard {
-  sampleTextProp?: string;
-}
+export interface IFeedCard {}
 
-const FeedCard: React.FC<IFeedCard> = ({ sampleTextProp }) => {
+const FeedCard: React.FC<IFeedCard> = () => {
   return (
     <div className='p-2 border-t-4 border-gray-200'>
       <div className='flex items-center justify-between'>

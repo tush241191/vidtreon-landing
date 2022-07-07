@@ -1,10 +1,9 @@
 export interface ILoginCard {
-  label?: string;
   toggleLoginModal: () => void;
 }
 
 const LoginCard: React.FC<ILoginCard> = (props: ILoginCard) => {
-  const { label, toggleLoginModal, ...rest } = props;
+  const { toggleLoginModal } = props;
   return (
     <>
       <div className='min-h-full flex flex-col justify-center'>

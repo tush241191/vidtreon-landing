@@ -1,8 +1,6 @@
 import { IMobile } from './Mobile';
 
-const base: IMobile = {
-  sampleTextProp: 'Hello world!',
-};
+const base: IMobile = {};
 
 export const mockMobileProps = {
   base,
