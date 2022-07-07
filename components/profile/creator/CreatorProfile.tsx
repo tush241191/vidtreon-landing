@@ -1,8 +1,11 @@
 export interface ICreatorProfile {
-  sampleTextProp?: string;
+  label?: string;
+  onClickSubscribe: () => void;
 }
 
-const CreatorProfile: React.FC<ICreatorProfile> = ({ sampleTextProp }) => {
+const CreatorProfile: React.FC<ICreatorProfile> = (props: ICreatorProfile) => {
+  const { label, onClickSubscribe, ...rest } = props;
+
   return (
     <div className="rounded-t-3xl space-y-4 bg-cover bg-center bg-no-repeat bg-[url('/car-1.jpeg')]">
       <div className='py-2 h-full bg-gradient-to-t from-black to-none'>
@@ -19,6 +22,7 @@ const CreatorProfile: React.FC<ICreatorProfile> = ({ sampleTextProp }) => {
         </div>
         <div className='mt-1 flex items-center justify-center space-x-1'>
           <button
+            onClick={onClickSubscribe}
             type='button'
             className='inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
           >

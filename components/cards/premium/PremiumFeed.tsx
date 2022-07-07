@@ -1,11 +1,13 @@
 export interface IPremiumFeed {
-  sampleTextProp?: string;
+  label?: string;
+  onClickSubscribe: () => void;
 }
 
-const PremiumFeed: React.FC<IPremiumFeed> = ({ sampleTextProp }) => {
+const PremiumFeed: React.FC<IPremiumFeed> = (props: IPremiumFeed) => {
+  const { label, onClickSubscribe, ...rest } = props;
   return (
     <div className='relative p-2 border-t-4 border-gray-200'>
-      <div className='px-8 absolute inset-x-0 bottom-0 h-full bg-black bg-opacity-90'>
+      <div className='px-8 absolute inset-x-0 bottom-0 h-full bg-black/90'>
         <div className='h-full text-[0.60rem] flex items-center justify-center'>
           <div className='flex flex-col w-full text-center'>
             <span className=' text-yellow-500 font-medium flex items-center justify-center'>
@@ -27,6 +29,7 @@ const PremiumFeed: React.FC<IPremiumFeed> = ({ sampleTextProp }) => {
             </span>
 
             <button
+              onClick={onClickSubscribe}
               type='button'
               className='z-20 mt-4 inline-flex items-center justify-center px-2.5 py-1.5 border border-transparent text-xs font-medium shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
             >
