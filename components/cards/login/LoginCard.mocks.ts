@@ -1,7 +1,10 @@
 import { ILoginCard } from './LoginCard';
 
 const base: ILoginCard = {
-  sampleTextProp: 'Hello world!',
+  label: 'Login card!',
+  toggleLoginModal: function (): void {
+    throw new Error('Function not implemented.');
+  },
 };
 
 export const mockLoginCardProps = {

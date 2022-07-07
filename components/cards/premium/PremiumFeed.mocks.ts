@@ -1,7 +1,10 @@
 import { IPremiumFeed } from './PremiumFeed';
 
 const base: IPremiumFeed = {
-  sampleTextProp: 'Hello world!',
+  label: 'Premium feed card!',
+  onClickSubscribe: function (): void {
+    throw new Error('Function not implemented.');
+  },
 };
 
 export const mockPremiumFeedProps = {
