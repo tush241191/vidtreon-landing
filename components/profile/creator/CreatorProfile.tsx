@@ -1,19 +1,20 @@
 export interface ICreatorProfile {
-  onClickSubscribe: () => void;
+  logout: () => void;
 }
 
 const CreatorProfile: React.FC<ICreatorProfile> = (props: ICreatorProfile) => {
-  const { onClickSubscribe } = props;
+  const { logout } = props;
 
   return (
     <div className="h-1/4 rounded-t-3xl space-y-4 bg-cover bg-center bg-no-repeat bg-[url('/car-1.jpeg')]">
       <div className='py-2 h-full bg-gradient-to-t from-black to-none'>
         <img
-          className='mx-auto h-16 w-16 rounded-full'
+          onClick={logout}
+          className='mx-auto h-16 w-16 rounded-full cursor-pointer'
           src='https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
           alt=''
         />
-        <div className='text-center'>
+        <div className='text-center mt-1'>
           <div className='font-medium'>
             <h3 className='text-[0.60rem] text-gray-50'>Asmita Kharat</h3>
           </div>

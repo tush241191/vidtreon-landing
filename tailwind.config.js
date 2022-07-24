@@ -12,6 +12,12 @@ module.exports = {
       lg: '1200px',
       xl: '1536px',
     },
+    extend: {
+      // Create your own at: https://javisperez.github.io/tailwindcolorshades
+      colors: {
+        branding: '#6600ff',
+      },
+    },
   },
   plugins: [],
 };

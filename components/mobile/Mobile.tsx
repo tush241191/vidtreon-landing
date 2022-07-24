@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import IFeed from '../../common/feed.type';
-import LoginCard from '../cards/login/LoginCard';
 import PremiumFeed from '../cards/premium/PremiumFeed';
 import CreatorProfile from '../profile/creator/CreatorProfile';
 
@@ -83,25 +82,46 @@ const Mobile: React.FC<IMobile> = () => {
     }
   };
 
+  const login = () => setIsLogin(true);
+  const logout = () => setIsLogin(false);
+
   return (
     <div className='mt-16 sm:mt-24 w-80 2xl:w-96 mx-auto'>
       <div className="relative py-[0.260rem] px-[2.350rem] h-[32rem] bg-contain bg-center bg-no-repeat bg-[url('/mobile.png')]">
         <div
           className={`relative flex flex-col h-full bg-black rounded-[1.45rem] mx-0.5`}
         >
-          {isLoginModal && (
-            <div className='z-10 absolute px-1 inset-y-0 left-0 w-full h-full bg-black/75'>
-              <LoginCard
-                toggleLoginModal={() => setIsLoginModal(!isLoginModal)}
-              />
-            </div>
-          )}
           <div
             className={`${
-              isLoginModal ? 'blur-sm bg-white' : ''
+              isLogin ? 'hidden' : ''
+            } rounded-3xl relative w-full h-full bg-cover bg-center bg-[url('/splash.png')]`}
+          >
+            <div className='absolute rounded-3xl top-0 inset-0 w-full h-full flex items-center justify-center bg-black/30'>
+              <div className='w-full relative h-full flex-col'>
+                <div className='max-w-md w-full h-full flex items-center'></div>
+                <div className='w-full absolute bottom-10 flex item-center justify-center space-x-4'>
+                  <a
+                    onClick={login}
+                    className='cursor-pointer inline-flex items-center px-3 py-1 border border-transparent text-[0.60rem] font-medium rounded-2xl shadow-sm text-white bg-branding focus:outline-none focus:ring-0'
+                  >
+                    Sign in
+                  </a>
+                  <a
+                    onClick={login}
+                    className='cursor-pointer inline-flex items-center px-3 py-1 border border-gray-300 shadow-sm text-[0.60rem] font-medium rounded-2xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-0'
+                  >
+                    Sign up
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className={`${
+              isLogin ? '' : 'hidden'
             } w-full h-full overflow-hidden`}
           >
-            <CreatorProfile onClickSubscribe={subscribeCreator} />
+            <CreatorProfile logout={logout} />
             <div className='rounded-b-3xl flex flex-col bg-white overflow-y-scroll h-3/4'>
               {feeds.map((feed, index) => (
                 <PremiumFeed
