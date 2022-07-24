@@ -1,7 +1,7 @@
 import { ICreatorProfile } from './CreatorProfile';
 
 const base: ICreatorProfile = {
-  onClickSubscribe: function (): void {
+  logout: function (): void {
     throw new Error('Function not implemented.');
   },
 };
